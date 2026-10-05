@@ -28,7 +28,7 @@ api: ## Auto-generate grpc go sources
 bundle: ## Generate embedded files
 	$(GO) generate bundle.go
 
-build: ## Build the binary files
+build: bundle ## Build the binary files
 	$(GO) build -v -o bin/ $(USE_VENDOR) $(LOCAL_LDFLAGS) ./cmd/...
 
 clean: ## Remove previous builds
