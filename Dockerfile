@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.version=$VERSION
 
 COPY --from=build-stage /srv/docserv /srv/docserv
 COPY --from=build-stage /src/rpm2docserv/bin/* /usr/local/bin
-COPY nginx/nginx.conf /usr/local/nginx/etc/
+COPY nginx/nginx.conf /etc/nginx/
 COPY nginx/*.sh /docker-entrypoint.d/
 COPY --from=build-stage /usr/bin/openssl /usr/bin/
 COPY --from=build-stage /etc/ssl/openssl.cnf /etc/ssl/
